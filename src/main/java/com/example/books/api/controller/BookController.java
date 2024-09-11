@@ -21,8 +21,8 @@ public class BookController {
     }
 
     @GetMapping(path = "/books")
-    public List<Book> getBooks() {
-        return bookService.getBooks();
+    public ResponseEntity<List<Book>> getBooks() {
+        return new ResponseEntity<>(bookService.getBooks(), HttpStatus.OK);
     }
 
     @GetMapping(path = "/books/{id}")
