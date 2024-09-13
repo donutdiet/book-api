@@ -61,7 +61,7 @@ public class BookController {
         Optional<Book> deletedBook = bookService.deleteBook(id);
 
         if(deletedBook.isPresent()) {
-            return new ResponseEntity<>(deletedBook.get(), HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(deletedBook.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
